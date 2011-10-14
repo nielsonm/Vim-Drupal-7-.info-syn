@@ -1,0 +1,16 @@
+Usage:
+
+  Move the file into ~/.vim/syntax/ if it exists.
+
+  Copy the following lines into ~/.vimrc:
+
+    augroup info
+       autocmd BufRead,BufNewFile *.info set filetype=drupal-info
+      autocmd BufRead,BufNewFile *.make set filetype=drupal-info
+    augroup END
+
+    Open a .info file and gaze thunderstruck at the colors.
+
+Note:
+
+  This vim syntax plugin should work for Drupal 6 as well, as always, YMMV.
