@@ -12,8 +12,8 @@ endif
 
 syn match   infoSection skipwhite contains=infoRule "^\[.\+\]$"
 
-syn match   infoRule "^[^=:]\{-1,}="
-syn match   infoRule "^[^:=]\{-1,}:"
+syn match   infoRule skipwhite  contains=infoVar  "^[^=:]\{-1,}="
+syn match   infoVar skipwhite  "[:alnum:]|_"
 
 syn match   infoComment skipwhite contains=infoTodo "^[#;].*"
 
@@ -22,8 +22,9 @@ syn keyword infoTodo contained TODO FIXME XXX NOTE
 " Highlighting Settings
 " ====================
 
-hi def link infoSection Keyword
-hi def link infoRule Type
+hi def link infoSection Type
+hi def link infoRule Keyword
+hi def link infoVar Constant
 hi def link infoComment Comment
 hi def link infoTodo Todo
 
